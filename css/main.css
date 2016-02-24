@@ -1,3 +1,8 @@
-body {
-  
-}
+  section {
+          background-color: gray;
+          overflow: hidden;
+          width: 20em;
+            }
+  aside {
+          width:50%;
+            }
