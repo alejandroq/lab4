@@ -11,18 +11,7 @@
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
-
-        <style type="text/css">
-            section {
-                background-color: gray;
-                overflow: hidden;
-                width: 20em;
-            }
-            aside {
-                width:50%;
-            }
-        </style>
-
+        
     </head>
     <body>
         
