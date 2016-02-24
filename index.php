@@ -1,9 +1,11 @@
 <?php include 'header.php' ?>
 
-<h1> Lab 4 by Hannah and Alejandro </h1>
+<header> 
+    <h1> Business Data Platform </h1>
+</header>
 
     <section>
-        <form action="" method="POST" id="employeeForm">
+        <form action="index.php" method="POST" id="employeeForm">
             <aside>
                 <p>Employee First Name</p>
                 <input type="text" id="firstName" name="firstName" required>
