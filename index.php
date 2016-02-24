@@ -3,7 +3,7 @@
 <h1> Lab 4 by Hannah and Alejandro </h1>
 
     <section>
-        <form action="" method="POST" id="myForm">
+        <form action="" method="POST" id="employeeForm">
             <aside>
                 <p>Employee First Name</p>
                 <input type="text" id="firstName" name="firstName" required>
