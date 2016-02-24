@@ -1,8 +1,12 @@
-  section {
-          background-color: gray;
-          overflow: hidden;
-          width: 20em;
-            }
-  aside {
-          width:50%;
-            }
+section {
+  background-color: gray;
+  overflow: hidden;
+  width: 20em;
+}
+aside {
+  width:50%;
+}
+.errorMsg {
+  border-color: red;
+  border-width: 1em;
+}
