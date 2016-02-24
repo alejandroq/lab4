@@ -1,0 +1,31 @@
+<!DOCTYPE HTML> 
+
+<html class="no-js" lang="">
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Lab 4</title>
+        <meta name="author" content="Alejandro Quesada">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+
+        <style type="text/css">
+            section {
+                background-color: gray;
+                overflow: hidden;
+                width: 20em;
+            }
+            aside {
+                width:50%;
+            }
+        </style>
+
+    </head>
+    <body>
+        
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
