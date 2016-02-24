@@ -3,7 +3,7 @@
 $(function() {
   $('.errorMsg').hide();
   
-  $('#employeeSubmit').submit(function() {
+  $('#employeeForm').submit(function() {
 
     var firstName, lastName, MI; 
 
