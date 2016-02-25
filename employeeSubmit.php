@@ -64,7 +64,7 @@ else //No Submission
 	
 	$conn->query($sql);
 		 
-    echo 'Thank you for submitting ' . $lastName . ', ' . $firstName . ' AGE: ' . $age;
+    echo 'Thank you for submitting ' . $lastName . ', ' . $firstName . "\r\n AGE: " . $age;
 }
 
 function getAge($DOB)
