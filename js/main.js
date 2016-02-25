@@ -57,12 +57,8 @@ $(function() {
     //PERFORM REQUEST
     $.ajax(options);
   }); //END OF FORM SUBMISSION
-}); //END OF DOCUMENT READY
-
-$(function() {
-	$('.errorMsg').hide();
-
-	$('#accidentForm').submit(function( event ) {
+  
+  $('#accidentForm').submit(function( event ) {
 
     event.preventDefault(); //Hijack event from PHP to refrain page reload. 
     var name, accidentDate, location, description; 
@@ -94,9 +90,9 @@ $(function() {
       } 
 
     }; // END OF AJAX SUCCESS
-    options.url = 'employeeSubmit.php';
-
-    //PERFORM REQUEST
+    options.url = 'accidentSubmit.php';
+	
+	//PERFORM REQUEST
     $.ajax(options);
   }); //END OF FORM SUBMISSION
 }); //END OF DOCUMENT READY
