@@ -18,14 +18,28 @@ aside {
   float:left;
 }
 span {
-	text-align: center;
+  margin-top: 2em;
+}
+h2 {
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  cursor: pointer;
 }
 form p {
   line-height:0em;
 }
-input {
+textarea {
+	resize:none;
+	width:100%;
+}
+input[type="text"] {
   line-height:0em;
+}
+input[type="date"], input[type="text"] {
   margin-bottom:1em; 
+}
+input[type="submit"] {
+  margin-top:2em;
+  width:100%;
 }
 .errorMsg {
   border-color: red;
@@ -35,9 +49,28 @@ input {
   width:3em;
 }
 .large {
-	width:100%;
-}
-input[type="submit"] {
-  margin-top:2em;
   width:100%;
+}
+.inactive {
+  color:gray;
+  -webkit-transition: all 0.2s ease-in-out 0s;
+  -moz-transition: all 0.2s ease-in-out 0s;
+  -ms-transition: all 0.2s ease-in-out 0s;
+  -o-transition: all 0.2s ease-in-out 0s;
+  transition: all 0.2s ease-in-out 0s;
+}
+.active {
+  color:black;
+  -webkit-transition: all 0.2s ease-in-out 0s;
+  -moz-transition: all 0.2s ease-in-out 0s;
+  -ms-transition: all 0.2s ease-in-out 0s;
+  -o-transition: all 0.2s ease-in-out 0s;
+  transition: all 0.2s ease-in-out 0s;
+}
+#employee, #accident, #dashboard {
+  display: none;
+  overflow: hidden;
+}
+#dashboard {
+  display: block; 
 }
