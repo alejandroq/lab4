@@ -43,8 +43,8 @@ else //No Submission
 	if ($conn->query($sql) === TRUE) {
 		echo "SUCCESS"};
 		else {
-		echo "ERROR"}
-		
+		echo "ERROR" . $sql . '\n'}
+		 
     echo 'CORRECT';
 }
 
