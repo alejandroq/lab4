@@ -9,7 +9,7 @@ CREATE TABLE Country(
 );
 
 CREATE TABLE Employee(
-	EmployeeId int NOT NULL PRIMARY KEY,
+	EmployeeId int NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	FirstName VARCHAR(30) NOT NULL,
 	LastName VARCHAR(30) NOT NULL,
 	MI CHAR(1) NULL,
@@ -25,7 +25,7 @@ CREATE TABLE Employee(
 );
 
 CREATE TABLE Accident(
-	AccidentID int NOT NULL PRIMARY KEY,
+	AccidentID int NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	DateOfAccident DATE NOT NULL, -- DD-MM-YY
 	AccidentDescription VARCHAR(140) NOT NULL,
 	AccidentLocation VARCHAR(20) NOT NULL,
