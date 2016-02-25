@@ -91,8 +91,8 @@ INSERT INTO Country VALUES
 	('ES', 'Spain');
 
 INSERT INTO Truck VALUES
-	(1, 'Full-Size Pick-Ups', 'Ford F-150', 2010, 26000, 'TRCK123'),
-	(2, 'Mid-Size Pick-Ups', 'Ford F-160', 2011, 26000, 'TRCK124'),
-	(3, 'Super-Size Pick-Ups', 'Ford F-170', 2012, 26000, 'TRCK125'),
-	(4, 'Tiny-Size Pick-Ups', 'Ford F-180', 2013, 26000, 'TRCK126'),
-	(5, 'Micro-Size Pick-Ups', 'Ford F-190', 2014, 26000, 'TRCK127');
+	(1, 'Full-Size Pick-Ups', 'Ford F-150', 26000, 'TRCK123'),
+	(2, 'Mid-Size Pick-Ups', 'Ford F-160', 26000, 'TRCK124'),
+	(3, 'Super-Size Pick-Ups', 'Ford F-170', 26000, 'TRCK125'),
+	(4, 'Tiny-Size Pick-Ups', 'Ford F-180', 26000, 'TRCK126'),
+	(5, 'Micro-Size Pick-Ups', 'Ford F-190', 26000, 'TRCK127');
