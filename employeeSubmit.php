@@ -6,34 +6,31 @@
 require 'connection.php';
 
 if (empty($_POST['firstName'])) {
-    echo 'ERRORfirstName';
+    echo 'Please enter a First Name';
 }
 elseif (empty($_POST['lastName'])) {
-	echo 'ERRORlastName';
+	echo 'Please enter a Last Name';
 }
 elseif (empty($_POST['DOB'])){
-	echo 'ERRORDOB';
+	echo 'Please enter a Date of Birth';
 }
 elseif (empty($_POST['address'])){
-	echo 'ERRORaddress';
+	echo 'Please enter an Address';
 }
 elseif (empty($_POST['zip'])){
-	echo 'ERRORzip';
-}
-elseif (empty($_POST['state'])){
-	echo 'ERRORstate';
+	echo 'Please enter a Zip';
 }
 elseif (empty($_POST['country'])){
-	echo 'ERRORcountry';
+	echo 'Please select a Country';
 }
 elseif (empty($_POST['licenseDate'])){
-	echo 'ERRORlicenseDate';
+	echo 'Please enter a License Date';
 }
 elseif (empty($_POST['hireDate'])){
-	echo 'ERRORhireDate';
+	echo 'Please enter a Hire Date';
 }
 elseif (empty($_POST['salary'])){
-	echo 'ERRORsalary';
+	echo 'Please enter a Salary';
 }
 else //No Submission 
 {
@@ -71,7 +68,9 @@ else //No Submission
 
 function getAge($DOB)
 {
-	$year = 
+	$date = DateTime::__construct($DOB);
+	$year = $date->format(Y);
+	return 2016 - $year; 
 }
 
 ?>
