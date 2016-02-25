@@ -22,7 +22,12 @@ else //No Submission
 	$accidentDescription = $_POST['description']
 	$accidentLocation = $_POST['location'];
 	$name = $_POST['name'];
-	$sql = "INSERT INTO accident VALUES(" . $accidentDate . "," . $accidentDescription .  "," . $accidentLocation . "," . $name . ")";
+	
+	$sql = "INSERT INTO accident (DateOfAccident,AccidentDescription,AccidentLocation,EmployeeID) VALUES('" 
+	. $accidentDate . "','" 
+	. $accidentDescription .  "','" 
+	. $accidentLocation . "','" 
+	. $name . "')";
 
 	if ($conn->query($sql) === TRUE) {
 		echo 'SUCCESS';
