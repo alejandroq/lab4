@@ -14,7 +14,7 @@ elseif (empty($_POST['lastName'])) {
 elseif (empty($_POST['DOB'])){
 	echo 'ERRORDOB';
 }
-elseif (empty($_POST['homeAddress'])){
+elseif (empty($_POST['address'])){
 	echo 'ERRORhomeAddress';
 }
 elseif (empty($_POST['zip'])){
@@ -23,11 +23,11 @@ elseif (empty($_POST['zip'])){
 elseif (empty($_POST['country'])){
 	echo 'ERRORcountry';
 }
-elseif (empty($_POST['LD'])){
-	echo 'ERRORLD';
+elseif (empty($_POST['licenseDate'])){
+	echo 'ERRORlicenseDate';
 }
-elseif (empty($_POST['HD'])){
-	echo 'ERRORHD';
+elseif (empty($_POST['hireDate'])){
+	echo 'ERRORhireDate';
 }
 elseif (empty($_POST['salary'])){
 	echo 'ERRORsalary';
