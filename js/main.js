@@ -1,10 +1,11 @@
 
 //AJAX REQUEST
 $(function() {
-  $(".errorMsg").hide(); 
-  
-  $("#employeeForm").submit(function() {
+  $('.errorMsg').hide();
 
+  $('#employeeForm').submit(function( event ) {
+
+    event.preventDefault(); //Hijack event from PHP to prevent page reload. 
     var firstName, lastName, MI; 
 
     firstName = $('#firstName').val();
@@ -18,17 +19,17 @@ $(function() {
 
     var options = new Object();
     options.data = data;
-    options.dataType = "text";
-    options.type = "get";
+    options.dataType = 'text';
+    options.type = 'get';
     options.success = function(response) {
       //if AJAX Request is a success
 
       if (response == 'CORRECT') {
-        $("#info").text("Thank you for your submission!");
+        $('#info').text('Thank you for your submission!');
       }
       else 
       {
-        $("#info").text("Something appears to be wrong... Try again?")
+        $('#info').text('Something appears to be wrong... Try again?')
       } 
 
     }; // END OF AJAX SUCCESS
