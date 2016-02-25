@@ -1,4 +1,5 @@
 <?php include 'header.php' ?>
+<?php require 'functions.php' ?>
 
 <header> 
     <h1> Business Data Platform </h1>
@@ -24,7 +25,8 @@
                     <input type="text" id="homeAddress" name="homeAddress" minlength="3" required>
                     <p>State</p>
                     <select id="state" name="state" required>
-                        <?php printState(); ?>
+                        <option>--Select State--</option>
+                        <?php printStates(); ?>
                     </select>
                     <p>License Date</p>
                     <input type="date" id="LD" name="LD" required>
@@ -36,12 +38,13 @@
                     <input type="text" id="MI" class="small" name="mi" maxlength="1" tabindex="2">
                     <p>Date of Birth</p>
                     <input type="date" id="DOB" name="DOB" required>
-                    <p>Country</p>
-                    <select id="country" name="country" required>
-                        <?php printCountries(); ?>
-                    </select>
                     <p>Zip</p>
                     <input type="text" id="zip" name="zip" maxlength="5" required>
+                    <p>Country</p>
+                    <select id="country" name="country" required>
+                        <option>--Select Country--</option>
+                        <?php printCountries(); ?>
+                    </select>
                     <p>Hire Date</p>
                     <input type="date" id="HD" name="HD" required>
                     <p>Termination Date</p>
