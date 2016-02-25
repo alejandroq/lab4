@@ -11,9 +11,11 @@ section {
   overflow: hidden;
   width: 20em;
   margin:0em auto 0em auto;
+  border-radius:.35em;
 }
 aside { 
   width:50%;
+  float:left;
 }
 form p {
   line-height:0em;
@@ -25,4 +27,10 @@ input {
 .errorMsg {
   border-color: red;
   border-width: .2em;
+}
+input .small {
+  width:3em;
+}
+aside .large {
+	width:100%;
 }
