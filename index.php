@@ -7,14 +7,14 @@
     <section>
         <form action="index.php" method="POST" id="employeeForm">
             <aside>
-                <p>Employee First Name</p>
+                <p>First Name</p>
                 <input type="text" id="firstName" name="firstName" required>
                 <p>Last Name</p>
-                <input type="text" id="firstName" name="lastName" required>
+                <input type="text" id="lastName" name="lastName" required>
             </aside>
             <aside>
                 <p>Middle Initial</p>
-                <input type="text" id="MI" name="mi" required>
+                <input type="text" id="MI" name="MI">
             </aside>
 
             <input type="submit" id="employeeSubmit" name="submit" value="Submit"></input>
