@@ -6,16 +6,35 @@ $(function() {
   $('#employeeForm').submit(function( event ) {
 
     event.preventDefault(); //Hijack event from PHP to refrain page reload. 
-    var firstName, lastName, MI; 
+    var firstName, lastName, MI, DOB, address, zip, state, country, 
+	licenseDate, hireDate, salary, termDate; 
 
     firstName = $('#firstName').val();
     lastName = $('#lastName').val();
     MI = $('#MI').val();
+	DOB = $('#DOB').val();
+	address = $('#homeAddress').val();
+	zip = $('#zip').val();
+	state = $('#state').val();
+	country = ('#country').val();
+	licenseDate = ('#LD').val();
+	hireDate = ('#HD').val();
+	salary = ('#salary').val();
+	termDate = ('#TD').val();
 
     var data = new Object();
     data.firstName = firstName;
     data.lastName = lastName;
     data.MI = MI; 
+	data.DOB = DOB;
+	data.address = address;
+	data.zip = zip;
+	data.state = state;
+	data.country = country;
+	data.licenseDate = licenseDate;
+	data.hireDate = hireDate;
+	data.salary = salary;
+	data.termDate = termDate;
 
     var options = new Object();
     options.data = data;
