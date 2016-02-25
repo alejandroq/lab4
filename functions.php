@@ -24,7 +24,7 @@ function printStates()
 {
 	require 'connection.php';
 
-    $sql = 'SELECT * FROM state ORDER BY StateAbbreviation DESC';
+    $sql = 'SELECT * FROM homestate ORDER BY StateAbbreviation DESC';
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) 
