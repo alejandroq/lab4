@@ -17,6 +17,9 @@ aside {
   width:50%;
   float:left;
 }
+span {
+	text-align: center;
+}
 form p {
   line-height:0em;
 }
