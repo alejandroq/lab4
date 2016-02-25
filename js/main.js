@@ -16,11 +16,11 @@ $(function() {
 	address = $('#homeAddress').val();
 	zip = $('#zip').val();
 	state = $('#state').val();
-	country = ('#country').val();
-	licenseDate = ('#LD').val();
-	hireDate = ('#HD').val();
-	salary = ('#salary').val();
-	termDate = ('#TD').val();
+	country = $('#country').val();
+	licenseDate = $('#LD').val();
+	hireDate = $('#HD').val();
+	salary = $('#salary').val();
+	termDate = $('#TD').val();
 
     var data = new Object();
     data.firstName = firstName;
