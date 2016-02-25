@@ -3,9 +3,9 @@
 //This script is the result of an AJAX request. 
 //This script expects to recieve all valuations required for an Employee Submission. 
 //The script returns a string indicating results. 
+require 'connection.php';
 
 if (empty($_POST['firstName'])) {
-
     echo 'ERRORfirstName';
 }
 elseif (empty($_POST['lastName'])) {
@@ -37,13 +37,39 @@ elseif (empty($_POST['salary'])){
 }
 else //No Submission 
 {
-	$sql="INSERT INTO employee VALUES (" . $_POST['firstName'] . "," . $_POST['lastName'] . "," . $_POST['MI'] . "," . $_POST['address'] . "," . $_POST['zip'] . "," . $_POST['DOB'] . "," .
-	$_POST['hireDate'] . "," . $_POST['terminationDate'] . "," . $_POST['salary'] . "," . $_POST['licenseDate'] . "," . $_POST['state'] . "," . $_POST['country']) . ")";
+	$firstName = $_POST['firstName'];
+	$lastName = $_POST['lastName'];
+	$MI = $_POST['MI'];
+	$address = $_POST['address'];
+	$zip = $_POST['zip'];
+	$DOB = $_POST['DOB'];
+	$hireDate = $_POST['hireDate'];
+	$termDate = $_POST['termDate'];
+	$salary = $_POST['salary'];
+	$licenseDate = $_POST['licenseDate'];
+	$state = $_POST['state'];
+	$country = $_POST['country'];
+	
+	$sql="INSERT INTO employee VALUES ('" 
+	. $firstName . "', '" 
+	. $lastName . "', '"  
+	. $MI . "', '"  
+	. $address . "', '"  
+	. $zip . "', '"  
+	. $DOB . "', '"  
+	. $hireDate . "', '"  
+	. $termDate . "', "  
+	. $salary . ", '"  
+	. $licenseDate . "', '"  
+	. $state . "', '"  
+	. $country . "');";
 	
 	if ($conn->query($sql) === TRUE) {
-		echo "SUCCESS"};
-		else {
-		echo "ERROR" . $sql . '\n'}
+		echo "SUCCESS";
+	} else 
+	{
+		echo "FATAL ERROR: \r\n" .  $sql . " \r\n" . mysqli_error($conn);
+	}
 		 
     echo 'CORRECT';
 }
