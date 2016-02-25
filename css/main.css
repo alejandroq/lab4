@@ -28,9 +28,13 @@ input {
   border-color: red;
   border-width: .2em;
 }
-input .small {
+.small {
   width:3em;
 }
-aside .large {
+.large {
 	width:100%;
+}
+input[type="submit"] {
+  margin-top:2em;
+  width:100%;
 }
