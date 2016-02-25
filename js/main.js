@@ -5,7 +5,7 @@ $(function() {
 
   $('#employeeForm').submit(function( event ) {
 
-    event.preventDefault(); //Hijack event from PHP to prevent page reload. 
+    event.preventDefault(); //Hijack event from PHP to refrain page reload. 
     var firstName, lastName, MI; 
 
     firstName = $('#firstName').val();
@@ -20,7 +20,7 @@ $(function() {
     var options = new Object();
     options.data = data;
     options.dataType = 'text';
-    options.type = 'get';
+    options.type = 'post';
     options.success = function(response) {
       //if AJAX Request is a success
 
@@ -39,3 +39,46 @@ $(function() {
     $.ajax(options);
   }); //END OF FORM SUBMISSION
 }); //END OF DOCUMENT READY
+
+//CLICK EVENTS
+ $('#employeeSwitch').on('click', function() {
+    $('#employee').toggle(300);
+    if ($('#employeeSwitch').hasClass('active')) 
+    {
+      $('#employeeSwitch').removeClass('active');
+      $('#employeeSwitch').addClass('inactive');
+    }
+    else
+    {
+      $('#employeeSwitch').removeClass('inactive');
+      $('#employeeSwitch').addClass('active');
+    }
+  });
+
+ $('#accidentSwitch').on('click', function() {
+    $('#accident').toggle(300);
+    if ($('#accidentSwitch').hasClass('active')) 
+    {
+      $('#accidentSwitch').removeClass('active');
+      $('#accidentSwitch').addClass('inactive');
+    }
+    else
+    {
+      $('#accidentSwitch').removeClass('inactive');
+      $('#accidentSwitch').addClass('active');
+    }
+  });
+
+  $('#dashboardSwitch').on('click', function() {
+    $('#dashboard').toggle(300);
+    if ($('#dashboardSwitch').hasClass('active')) 
+    {
+      $('#dashboardSwitch').removeClass('active');
+      $('#dashboardSwitch').addClass('inactive');
+    }
+    else
+    {
+      $('#dashboardSwitch').removeClass('inactive');
+      $('#dashboardSwitch').addClass('active');
+    }
+  });
