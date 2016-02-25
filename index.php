@@ -6,21 +6,24 @@
 
     <section>
         <form action="index.php" method="POST" id="employeeForm">
+
             <aside>
                 <p>First Name</p>
-                <input type="text" id="firstName" name="firstName" required>
+                <input type="text" id="firstName" name="firstName" minlength="3" tabindex="1" required>
                 <p>Last Name</p>
-                <input type="text" id="lastName" name="lastName" required>
+                <input type="text" id="firstName" name="lastName" minlength="3" tabindex="3" required>
             </aside>
             <aside>
                 <p>Middle Initial</p>
-                <input type="text" id="MI" name="MI">
+                <input type="text" id="MI" class="small" name="mi" maxlength="1" tabindex="2">
             </aside>
 
-            <input type="submit" id="employeeSubmit" name="submit" value="Submit"></input>
+            <aside class="large">
+                <input type="submit" id="employeeSubmit" name="submit"value="Submit"></input> 
+                <span id="info"></span>
+            </aside>
 
         </form>
-        <span id="info"></span>
     </section>
 
 <?php include 'footer.php' ?>
