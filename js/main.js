@@ -59,6 +59,49 @@ $(function() {
   }); //END OF FORM SUBMISSION
 }); //END OF DOCUMENT READY
 
+$(function() {
+	$('.errorMsg').hide();
+
+	$('#accidentForm').submit(function( event ) {
+
+    event.preventDefault(); //Hijack event from PHP to refrain page reload. 
+    var name, accidentDate, location, description; 
+
+    name = $('#name').val();
+    accidentDate = $('#AD').val();
+    location = $('#location').val();
+	description = $('#description').val();
+
+    var data = new Object();
+    data.name = name;
+    data.accidentDate = accidentDate;
+    data.location = location; 
+	data.description = description;
+
+    var options = new Object();
+    options.data = data;
+    options.dataType = 'text';
+    options.type = 'post';
+    options.success = function(response) {
+      //if AJAX Request is a success
+
+      if (response == 'CORRECT') {
+        $('#info').text('Thank you for your submission!');
+      }
+      else 
+      {
+        $('#info').text('Something appears to be wrong... Try again?')
+      } 
+
+    }; // END OF AJAX SUCCESS
+    options.url = 'employeeSubmit.php';
+
+    //PERFORM REQUEST
+    $.ajax(options);
+  }); //END OF FORM SUBMISSION
+}); //END OF DOCUMENT READY
+
+
 //CLICK EVENTS
  $('#employeeSwitch').on('click', function() {
     $('#employee').toggle(300);
