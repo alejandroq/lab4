@@ -46,6 +46,7 @@ else //No Submission
 	$licenseDate = $_POST['licenseDate'];
 	$state = $_POST['state'];
 	$country = $_POST['country'];
+	$age = getAge(substr($DOB,0,4));
 	
 	$sql="INSERT INTO employee (firstName, lastName, MI, HomeAddress, Zip, DateOfBirth,HireDate,TerminationDate,Salary,LicenseDate,StateAbbreviation,CountryAbbreviation) VALUES ('" 
 	. $firstName . "', '" 
@@ -61,16 +62,14 @@ else //No Submission
 	. $state . "', '"  
 	. $country . "');";
 	
-	$conn->query($sql)
+	$conn->query($sql);
 		 
-    echo 'Thank you for submitting ' . $lastName . ', ' . $firstName . ' AGE: ' . getAge($DOB);
+    echo 'Thank you for submitting ' . $lastName . ', ' . $firstName . ' AGE: ' . $age;
 }
 
 function getAge($DOB)
 {
-	$date = DateTime::__construct($DOB);
-	$year = $date->format(Y);
-	return 2016 - $year; 
+	return 2016 - $DOB;
 }
 
 ?>
