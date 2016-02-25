@@ -50,7 +50,7 @@ else //No Submission
 	$state = $_POST['state'];
 	$country = $_POST['country'];
 	
-	$sql="INSERT INTO employee VALUES ('" 
+	$sql="INSERT INTO employee (firstName, lastName, MI, HomeAddress, Zip, DateOfBirth,HireDate,TerminationDate,Salary,LicenseDate,StateAbbreviation,CountryAbbreviation) VALUES ('" 
 	. $firstName . "', '" 
 	. $lastName . "', '"  
 	. $MI . "', '"  
@@ -64,16 +64,14 @@ else //No Submission
 	. $state . "', '"  
 	. $country . "');";
 	
-	if ($conn->query($sql) === TRUE) {
-		echo "SUCCESS";
-	} else 
-	{
-		echo "FATAL ERROR: \r\n" .  $sql . " \r\n" . mysqli_error($conn);
-	}
+	$conn->query($sql)
 		 
-    echo 'CORRECT';
+    echo 'Thank you for submitting ' . $lastName . ', ' . $firstName . ' AGE: ' . getAge($DOB);
 }
 
-
+function getAge($DOB)
+{
+	$year = 
+}
 
 ?>
