@@ -23,9 +23,9 @@
                     <p>Home Address</p>
                     <input type="text" id="homeAddress" name="homeAddress" minlength="3" required>
                     <p>State</p>
-                    <input type="text" id="state" name="state" minlength="3" required>
-                    <p>Country</p>
-                    <input type="text" id="country" name="country" minlength="3" required>
+                    <select id="state" name="state" required>
+                        <?php printState(); ?>
+                    </select>
                     <p>License Date</p>
                     <input type="date" id="LD" name="LD" required>
                     <p>Salary</p>
@@ -36,8 +36,10 @@
                     <input type="text" id="MI" class="small" name="mi" maxlength="1" tabindex="2">
                     <p>Date of Birth</p>
                     <input type="date" id="DOB" name="DOB" required>
-                    <p>City</p>
-                    <input type="text" id="city" name="city" minlength="3" required>
+                    <p>Country</p>
+                    <select id="country" name="country" required>
+                        <?php printCountries(); ?>
+                    </select>
                     <p>Zip</p>
                     <input type="text" id="zip" name="zip" maxlength="5" required>
                     <p>Hire Date</p>
