@@ -37,7 +37,7 @@
                     <p>Middle Initial</p>
                     <input type="text" id="MI" class="small" name="mi" maxlength="1" tabindex="2">
                     <p>Date of Birth</p>
-                    <input type="date" id="DOB" name="DOB" required>
+                    <input type="date" id="DOB" name="DOB" placeholder="MM/DD/YYYY" required>
                     <p>Zip</p>
                     <input type="text" id="zip" name="zip" maxlength="5" required>
                     <p>Country</p>
@@ -46,9 +46,9 @@
                         <?php printCountries(); ?>
                     </select>
                     <p>Hire Date</p>
-                    <input type="date" id="HD" name="HD" required>
+                    <input type="date" id="HD" name="HD" placeholder="MM/DD/YYYY" required>
                     <p>Termination Date</p>
-                    <input type="date" id="TD" name="TD">
+                    <input type="date" id="TD" name="TD" placeholder="MM/DD/YYYY">
                 </aside>
 
                 <aside class="large">
@@ -70,7 +70,7 @@
                 </aside>
                 <aside>
                     <p>Accident Date</p>
-                    <input type="date" id="AD" name="AD" required>
+                    <input type="date" id="AD" name="AD" placeholder="MM/DD/YYYY" required>
                 </aside>
 
                 <aside class="large">
