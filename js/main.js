@@ -43,7 +43,7 @@ $(function() {
     options.success = function(response) {
     //if AJAX Request is a success
 
-    $('#empInfo').text('Thank you for your submission!');
+    $('#empInfo').text(return);
    
   }; // END OF AJAX SUCCESS
   options.url = 'employeeSubmit.php';
