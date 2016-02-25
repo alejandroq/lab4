@@ -8,8 +8,8 @@ if (empty($_POST['name'])) {
 
     echo 'ERRORname';
 }
-elseif (empty($_POST['AD'])) {
-	echo 'ERRORAD';
+elseif (empty($_POST['accidentDate'])) {
+	echo 'ERRORaccidentDate';
 }
 elseif (empty($_POST['location'])){
 	echo 'ERRORlocation';
