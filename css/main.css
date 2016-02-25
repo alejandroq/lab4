@@ -32,7 +32,7 @@ h2 {
   -o-transition: all 0.2s ease-in-out 0s;
   transition: all 0.2s ease-in-out 0s;
 }
-h2:hover {
+h2:hover, .active {
   background-color:#6599FF;
   border-radius:2em;
   color:#FFF333;
@@ -72,14 +72,7 @@ input[type="submit"] {
   -o-transition: all 0.2s ease-in-out 0s;
   transition: all 0.2s ease-in-out 0s;
 }
-.active {
-  color:black;
-  -webkit-transition: all 0.2s ease-in-out 0s;
-  -moz-transition: all 0.2s ease-in-out 0s;
-  -ms-transition: all 0.2s ease-in-out 0s;
-  -o-transition: all 0.2s ease-in-out 0s;
-  transition: all 0.2s ease-in-out 0s;
-}
+
 #employee, #accident, #dashboard {
   display: none;
   overflow: hidden;
