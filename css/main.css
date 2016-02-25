@@ -23,6 +23,20 @@ span {
 h2 {
   font-family: "Trebuchet MS", Helvetica, sans-serif;
   cursor: pointer;
+  background-color:#D8E5FF;
+  border-radius:1em;
+  padding:.5em;
+  -webkit-transition: all 0.2s ease-in-out 0s;
+  -moz-transition: all 0.2s ease-in-out 0s;
+  -ms-transition: all 0.2s ease-in-out 0s;
+  -o-transition: all 0.2s ease-in-out 0s;
+  transition: all 0.2s ease-in-out 0s;
+}
+h2:hover {
+  background-color:#6599FF;
+  padding:1em;
+  border-radius:2em;
+  color:#FFF333;
 }
 form p {
   line-height:0em;
