@@ -14,6 +14,7 @@
 
         <h2 id="employeeSwitch" class="inactive">Employee Form</h2>
         <div id="employee"> 
+            <p id="empInfo"></p>
             <form action="index.php" method="POST" id="employeeForm">
 
                 <aside>
@@ -60,6 +61,7 @@
 
         <h2 id="accidentSwitch" class="inactive">Accident Form</h2>
         <div id="accident"> 
+            <p id="acdInfo"></p>
             <form action="index.php" method="POST" id="accidentForm">
 
                 <aside>
@@ -84,7 +86,6 @@
             </form>
         </div>
 
-        <p id="info"></p>
     </section>
 
 <?php include 'footer.php' ?>
