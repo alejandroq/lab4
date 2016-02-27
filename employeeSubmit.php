@@ -36,7 +36,7 @@ else //No Submission
 {
 	$return = array( //This JSON will allow a client-side parse and append to simmulate desktop application-like dropdown list population for the Accident Affected Employee dropdown.
 		"val" => 0,
-		"name" => $_POST['lastName'] .', ' . $_POST['firstName'];
+		"name" => $_POST['lastName'] .', ' . $_POST['firstName'],
 		"sql" => "",
 		"result" => ""
 		);
@@ -72,11 +72,11 @@ else //No Submission
 	
 	if ($conn->query($return["sql"]))
 	{
-	    $result["result"] = 'Thank you for submitting ' . $lastName . ', ' . $firstName . "\r\n AGE: " . $age;
-	    $result["val"] => $conn->insert_id; 
+	    $return["result"] = 'Thank you for submitting ' . $lastName . ', ' . $firstName . "\r\n AGE: " . $age;
+	    $return["val"] = $conn->insert_id; //returning latest value for <option value="this"> of the to-be appended Accident dropdown list
 	} else 
 	{
-		$result["result"] = 'Could not connect to the server. Please try again.'; 
+		$return["result"] = 'Could not connect to the server. Please try again.'; 
 	}
 	echo json_encode($return);
 }
