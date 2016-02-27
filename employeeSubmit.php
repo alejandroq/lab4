@@ -34,6 +34,13 @@ elseif (empty($_POST['salary'])){
 }
 else //No Submission 
 {
+	$return = array( //This JSON will allow a client-side parse and append to simmulate desktop application-like dropdown list population for the Accident Affected Employee dropdown.
+		"val" => 0,
+		"name" => $_POST['lastName'] .', ' . $_POST['firstName'],
+		"sql" => "",
+		"result" => ""
+		);
+
 	$firstName = $_POST['firstName'];
 	$lastName = $_POST['lastName'];
 	$MI = $_POST['MI'];
@@ -46,9 +53,10 @@ else //No Submission
 	$licenseDate = $_POST['licenseDate'];
 	$state = $_POST['state'];
 	$country = $_POST['country'];
+
 	$age = getAge(substr($DOB,0,4));
 	
-	$sql="INSERT INTO employee (firstName, lastName, MI, HomeAddress, Zip, DateOfBirth,HireDate,TerminationDate,Salary,LicenseDate,StateAbbreviation,CountryAbbreviation) VALUES ('" 
+	$return["sql"]="INSERT INTO employee (firstName, lastName, MI, HomeAddress, Zip, DateOfBirth,HireDate,TerminationDate,Salary,LicenseDate,StateAbbreviation,CountryAbbreviation) VALUES ('" 
 	. $firstName . "', '" 
 	. $lastName . "', '"  
 	. $MI . "', '"  
@@ -62,9 +70,15 @@ else //No Submission
 	. $state . "', '"  
 	. $country . "');";
 	
-	$conn->query($sql);
-		 
-    echo 'Thank you for submitting ' . $lastName . ', ' . $firstName . "\r\n AGE: " . $age;
+	if ($conn->query($return["sql"]))
+	{
+	    $return["result"] = 'Thank you for submitting ' . $lastName . ', ' . $firstName . "\r\n AGE: " . $age;
+	    $return["val"] = $conn->insert_id; //returning latest value for <option value="this"> of the to-be appended Accident dropdown list
+	} else 
+	{
+		$return["result"] = 'Could not connect to the server. Please try again.'; 
+	}
+	echo json_encode($return);
 }
 
 function getAge($DOB)

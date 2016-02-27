@@ -43,7 +43,8 @@ $(function() {
     options.success = function(response) {
     //if AJAX Request is a success
 
-    $('#empInfo').text(response);
+    var data = jQuery.parseJSON(response); //parses PHP encoded JSON-result into an object
+    $('#empInfo').text(data.result);
    
   }; // END OF AJAX SUCCESS
   options.url = 'employeeSubmit.php';
