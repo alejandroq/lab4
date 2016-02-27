@@ -44,6 +44,10 @@ $(function() {
     //if AJAX Request is a success
 
     var data = jQuery.parseJSON(response); //parses PHP encoded JSON-result into an object
+
+    //append the latest submittion to the DOM for the Accident Affected Employee Dropdown
+    $('#name').append('<option value="' + data.val + '">' + data.name + '</option>');
+
     $('#empInfo').text(data.result);
    
   }; // END OF AJAX SUCCESS
