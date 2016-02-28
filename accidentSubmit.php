@@ -18,16 +18,7 @@ elseif (empty($_POST['description'])){
 }
 else //No Submission 
 {
-	$accidentDate = $_POST['accidentDate'];
-	$accidentDescription = $_POST['description']
-	$accidentLocation = $_POST['location'];
-	$name = $_POST['name'];
-	
-	$sql = "INSERT INTO accident (DateOfAccident,AccidentDescription,AccidentLocation,EmployeeID) VALUES('" 
-	. $accidentDate . "','" 
-	. $accidentDescription .  "','" 
-	. $accidentLocation . "','" 
-	. $name . "')";
+	$sql = "INSERT INTO accident VALUES(" . $_POST['accidentDate'] ", " . $_POST['AccidentDescription'] . ", " . $_POST['description'] . ", " . $_POST['location'] . ", " . $_POST['name'] . ")";
 
 	if ($conn->query($sql) === TRUE) {
 		echo 'SUCCESS';
