@@ -8,8 +8,10 @@
     <section>
 
         <h2 id="dashboardSwitch" class="active">Dashboard</h2>
+        <button type="button" id="reloadDashboard" name="reloadDashboard">Reload Dashboard</button>
         <div id="dashboard"> 
-            <p>Will Appear Here</p>
+            <p>Enjoy your 'Business' information.</p>
+            <?php printDashboard(); ?>
         </div>
 
         <h2 id="employeeSwitch" class="inactive">Employee Form</h2>
@@ -68,6 +70,7 @@
                     <p>Affected Employee</p> <!-- drop down -->
                     <select id="name" name="name">
                         <option value="">--Select--</option>
+                        <?php printEmployees(); ?>
                     </select>
                 </aside>
                 <aside>
