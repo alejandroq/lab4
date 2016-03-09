@@ -127,8 +127,11 @@ function printEmployees()
 	$sql = 'SELECT EmployeeID, CONCAT(lastName , ", " , firstName) Name FROM Employee';
 	$result = $conn->query($sql);
 
-	print_r($result);
-
+	echo 
+	'
+		<select id="name" name="name">
+        <option value="">--Select--</option>
+	';
 	if ($result->num_rows > 0)
 	{
 		while ($row = $result->fetch_assoc())
@@ -142,6 +145,10 @@ function printEmployees()
 			';
 		}
 	}
+	echo 
+	'
+		</select>
+	';
 
 }
 

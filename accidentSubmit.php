@@ -4,6 +4,8 @@
 //This script expects to recieve all valuations required for an Accident Submission. 
 //The script returns a string indicating results. 
 
+require 'connection.php';
+
 if (empty($_POST['name'])) {
     echo 'Please select an Affected Employee';
 }
@@ -18,15 +20,26 @@ elseif (empty($_POST['description'])){
 }
 else //No Submission 
 {
-	$sql = "INSERT INTO accident VALUES(" . $_POST['accidentDate'] ", " . $_POST['AccidentDescription'] . ", " . $_POST['description'] . ", " . $_POST['location'] . ", " . $_POST['name'] . ")";
 
-	if ($conn->query($sql) === TRUE) {
-		echo 'SUCCESS';
+	$date = $_POST['accidentDate'];
+	$desc = $_POST['description'];
+	$name = $_POST['name'];
+	$location = $_POST['location'];
+
+	$sql = "INSERT INTO accident (DateOfAccident, AccidentDescription, AccidentLocation, EmployeeID) VALUES(
+	'" . $date . "', 
+	'" . $desc . "', 
+	'" . $location . "', 
+	'" . $name . "')";
+
+	if ($conn->query($sql))
+	{
+	    echo "Thank you for your submission!";
 	} else 
 	{
-		echo 'FAILED: ' . $sql . '\n'; 
+		echo $sql;
+		echo "Could not connect to the server.";
 	}
-    echo 'Thank you for your submission!';
 }
 
 ?>

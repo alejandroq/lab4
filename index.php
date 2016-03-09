@@ -6,10 +6,9 @@
 </header>
 
     <section>
-
         <h2 id="dashboardSwitch" class="active">Dashboard</h2>
-        <button type="button" id="reloadDashboard" name="reloadDashboard">Reload Dashboard</button>
         <div id="dashboard"> 
+            <button type="button" id="reloadDashboard" name="reloadDashboard">Reload Dashboard</button>
             <p>Enjoy your 'Business' information.</p>
             <?php printDashboard(); ?>
         </div>
@@ -32,7 +31,7 @@
                         <?php printStates(); ?>
                     </select>
                     <p>License Date</p>
-                    <input type="date" id="LD" name="LD" required>
+                    <input type="text" id="LD" name="LD" placeholder="YYYY-MM-DD" required>
                     <p>Salary</p>
                     <input type="number" id="salary" name="salary" minlength="4" required>
                 </aside>
@@ -40,7 +39,7 @@
                     <p>Middle Initial</p>
                     <input type="text" id="MI" class="small" name="mi" maxlength="1" tabindex="2">
                     <p>Date of Birth</p>
-                    <input type="date" id="DOB" name="DOB" placeholder="MM/DD/YYYY" required>
+                    <input type="text" id="DOB" name="DOB" placeholder="YYYY-MM-DD" required>
                     <p>Zip</p>
                     <input type="text" id="zip" name="zip" maxlength="5" required>
                     <p>Country</p>
@@ -49,9 +48,9 @@
                         <?php printCountries(); ?>
                     </select>
                     <p>Hire Date</p>
-                    <input type="date" id="HD" name="HD" placeholder="MM/DD/YYYY" required>
+                    <input type="text" id="HD" name="HD" placeholder="YYYY-MM-DD" required>
                     <p>Termination Date</p>
-                    <input type="date" id="TD" name="TD" placeholder="MM/DD/YYYY">
+                    <input type="text" id="TD" name="TD" placeholder="YYYY-MM-DD">
                 </aside>
 
                 <aside class="large">
@@ -67,15 +66,12 @@
             <form action="index.php" method="POST" id="accidentForm">
 
                 <aside>
-                    <p>Affected Employee</p> <!-- drop down -->
-                    <select id="name" name="name">
-                        <option value="">--Select--</option>
+                    <p>Affected Employee</p> 
                         <?php printEmployees(); ?>
-                    </select>
                 </aside>
                 <aside>
                     <p>Accident Date</p>
-                    <input type="date" id="AD" name="AD" placeholder="MM/DD/YYYY" required>
+                    <input type="text" id="AD" name="AD" placeholder="YYYY-MM-DD" required>
                 </aside>
 
                 <aside class="large">
