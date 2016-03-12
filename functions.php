@@ -53,7 +53,7 @@ function printDashboard()
 
 	echo '<table>';
 
-	$sql = 'SELECT CONCAT(ifNull(lastName, "") , ", " , ifNull(firstName,"")) Name, ifNull(Accident.AccidentLocation, "")AccidentLocation FROM employee 
+	$sql = 'SELECT CONCAT(ifNull(lastName, "") , ", " , ifNull(firstName,"")) Name, AccidentID, DateOfAccident, AccidentLocation, AccidentDescription FROM employee 
 		LEFT JOIN accident ON employee.EmployeeID = accident.EmployeeID';
 
     $result = $conn->query($sql);
@@ -64,12 +64,18 @@ function printDashboard()
 		while ($row = $result->fetch_assoc())
 		{
 			$name = $row['Name'];
-			$location = $row['Accident.AccidentLocation'];
+			$accidentID = $row['AccidentID'];
+			$accDate = $row['DateOfAccident'];
+			$location = $row['AccidentLocation'];
+			$description = $row['AccidentDescription'];
 
 			echo 
 			' <tr> 
 				<td> ' . $name . '</td> 
+				<td> ' . $accidentID . '</td>
+				<td> ' . $accDate . '</td>
 				<td> ' . $location . '</td> 
+				<td> ' . $description . '</td>
 			 </tr>';
 		}
 	}
