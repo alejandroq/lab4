@@ -54,7 +54,7 @@ function printDashboard()
 	echo '<table>';
 
 	$sql = 'SELECT CONCAT(ifNull(lastName, "") , ", " , ifNull(firstName,"")) Name, ifNull(Accident.AccidentLocation, "")AccidentLocation FROM employee 
-		RIGHT JOIN accident ON employee.EmployeeID = accident.EmployeeID';
+		LEFT JOIN accident ON employee.EmployeeID = accident.EmployeeID';
 
     $result = $conn->query($sql);
 
