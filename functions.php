@@ -50,52 +50,60 @@ function printStates()
 function printDashboard()
 {
 	require 'connection.php';
-
 	echo '<table>';
-
-	$sql = 'SELECT CONCAT(ifNull(lastName, "") , ", " , ifNull(firstName,"")) Name, ifNull(Accident.AccidentLocation, "")AccidentLocation FROM employee 
+	$sql = 'SELECT CONCAT(ifNull(lastName, "") , ", " , ifNull(firstName,"")) Name, AccidentID, DateOfAccident, AccidentLocation, AccidentDescription FROM employee 
 		LEFT JOIN accident ON employee.EmployeeID = accident.EmployeeID';
-
     $result = $conn->query($sql);
-
-
     if ($result->num_rows > 0) 
 	{
+		echo 
+			' <tr style="background-color:#6599FF; color:white;">  
+				<td> Accident ID </td> 
+				<td> Name </td>
+				<td> Date </td>
+				<td> Location</td> 
+				<td> Description</td>
+			 </tr>';
+
 		while ($row = $result->fetch_assoc())
 		{
 			$name = $row['Name'];
-			$location = $row['Accident.AccidentLocation'];
-
+			$accidentID = $row['AccidentID'];
+			$accDate = $row['DateOfAccident'];
+			$location = $row['AccidentLocation'];
+			$description = $row['AccidentDescription'];
 			echo 
 			' <tr> 
-				<td> ' . $name . '</td> 
+				<td> ' . $accidentID . '</td> 
+				<td> ' . $name . '</td>
+				<td> ' . $accDate . '</td>
 				<td> ' . $location . '</td> 
+				<td> ' . $description . '</td>
 			 </tr>';
 		}
 	}
 
-	$sql = 'SELECT SUM(salary) Salary FROM Employee';
-	$result = $conn->query($sql);
+	echo 
+	'
+		<tr><td style="border-color:yellow;">&nbsp;</td></tr>
+	';
+
 
 	if ($result->num_rows > 0)
 	{
-		while ($row = $result->fetch_assoc())
-		{
-			$salary = $row['Salary'];
-			echo 
+		echo 
 			'
-				<tr>
-					<td> ' . $salary . ' </td>
+				<tr style="background-color:#6599FF; color:white;"> 
+					<td> Vehicle Number </td>
+					<td> Make </td>
+					<td> Model </td>
+					<td> Price Aquired </td>
+					<td> License Date </td>
 				</tr>
 			';
-		}
-	}
 
 	$sql = 'SELECT * FROM Truck';
 	$result = $conn->query($sql);
-
-	if ($result->num_rows > 0)
-	{
 		while ($row = $result->fetch_assoc())
 		{
 			$vinNumber = $row['VinNumber'];
@@ -103,7 +111,6 @@ function printDashboard()
 			$model = $row['Model'];
 			$priceAcquired = $row['PriceAcquired'];
 			$licenseDate = $row['LicenseDate'];
-
 			echo 
 			'
 				<tr> 
@@ -116,6 +123,29 @@ function printDashboard()
 			';
 		}
 	}
+
+	echo 
+	'
+		<tr><td style="border-color:yellow;">&nbsp;</td></tr>
+	';
+
+	$sql = 'SELECT SUM(salary) Salary FROM Employee';
+	$result = $conn->query($sql);
+	if ($result->num_rows > 0)
+	{
+		while ($row = $result->fetch_assoc())
+		{
+			$salary = $row['Salary'];
+			echo 
+			'
+				<tr>
+					<td style="background-color:#6599FF; color:white;">Sum Salary</td>
+					<td> ' . $salary . ' </td>
+				</tr>
+			';
+		}
+	}
+
 
 	echo '</table>';
 }
@@ -141,7 +171,7 @@ function printEmployees()
 
 			echo 
 			'
-				<option value=' . $employeeID . '>' . $name . '<option>
+				<option value=' . $employeeID . '>' . $name . '</option>
 			';
 		}
 	}

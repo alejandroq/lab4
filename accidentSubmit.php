@@ -37,7 +37,6 @@ else //No Submission
 	    echo "Thank you for your submission!";
 	} else 
 	{
-		echo $sql;
 		echo "Could not connect to the server.";
 	}
 }

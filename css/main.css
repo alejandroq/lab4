@@ -44,7 +44,6 @@ textarea {
   resize:none;
   width:100%;
 }
-
 select, input[type="text"] {
   margin-bottom:1.5em; 
 }
@@ -77,4 +76,27 @@ input[type="submit"] {
 }
 #dashboard {
   display: block; 
+}
+table {
+  margin:0 auto 0 auto;
+  max-width:50em;
+}
+#reloadDashboard {
+  padding:.25em;
+  color:white;
+  border-radius:.2em;
+  background-color:gray; 
+  text-decoration:none;
+}
+#reloadDashboard:visited {
+  color:white;
+}
+#reloadDashboard:hover {
+  background-color:black;
+}
+td{
+  border-width:thin;
+  border-style:solid;
+  padding:.2em;
+  border-color:darkcyan
 }

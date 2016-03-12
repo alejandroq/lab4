@@ -89,6 +89,27 @@ $(function() {
   $.ajax(options);
   }); //END OF FORM SUBMISSION
 
+  $('#OFF').click(function( event ) {
+
+      event.preventDefault(); //Hijack event from PHP to refrain page reload. 
+
+      var options = new Object();
+      options.dataType = 'text';
+      options.data = 'functions=time';
+      options.type = 'post';
+      options.success = function(response) {
+      //if AJAX Request is a success
+      $('#dashboard').html(response);
+     
+    }; // END OF AJAX SUCCESS
+    options.url = 'functions.php';
+
+      //PERFORM REQUEST
+    $.ajax(options);
+}); //END OF FORM SUBMISSION
+}); //END OF DOCUMENT READY
+
+
 //CLICK EVENTS
  $('#employeeSwitch').on('click', function() {
     $('#employee').toggle(300);

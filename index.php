@@ -8,7 +8,7 @@
     <section>
         <h2 id="dashboardSwitch" class="active">Dashboard</h2>
         <div id="dashboard"> 
-            <a href="index.php" type="button" id="reloadDashboard">Reload Dashboard</a>
+            <a href="index.php" id="reloadDashboard">Reload Dashboard</a>
             <p>Enjoy your 'Business' information.</p>
             <?php printDashboard(); ?>
         </div>
